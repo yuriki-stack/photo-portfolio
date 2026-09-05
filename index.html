@@ -3,38 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="YU Photography - 日常の中にある瞬間を切り取る写真ポートフォリオ。">
-  <title>YU Photography</title>
+  <meta name="description" content="YU Photography - 日常の中にある、ふと心に残る瞬間を。">
+  <meta name="theme-color" content="#111111">
+  <title>YU Photography | Photo Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="site-header">
-    <a class="logo" href="#">YU <span>PHOTOGRAPHY</span></a>
-    <nav>
+    <a class="logo" href="#top" aria-label="YU Photography home">
+      <strong>YU</strong><span>PHOTOGRAPHY</span>
+    </a>
+    <nav aria-label="メインナビゲーション">
       <a href="#gallery">Gallery</a>
       <a href="#about">About</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
+  <main id="top">
+    <section class="hero" aria-label="メインビジュアル">
       <img src="images/cat-sleeping.jpg" alt="光の中でくつろぐ猫">
-      <div class="hero-overlay">
+      <div class="hero-shade"></div>
+      <div class="hero-content">
         <p class="eyebrow">PHOTO PORTFOLIO</p>
         <h1>Moments<br><em>in ordinary life.</em></h1>
         <p class="hero-copy">日常の中にある、ふと心に残る瞬間を。</p>
-        <a class="scroll-link" href="#gallery">Explore Gallery ↓</a>
+        <a class="hero-link" href="#gallery">Explore Gallery <span>↓</span></a>
       </div>
+      <div class="hero-index">01 / 02</div>
     </section>
 
     <section id="gallery" class="section gallery-section">
-      <div class="section-heading">
-        <p class="eyebrow">SELECTED WORKS</p>
-        <h2>Gallery</h2>
-        <p>今後、撮影した写真をここに追加していきます。</p>
+      <div class="section-intro">
+        <div>
+          <p class="eyebrow">SELECTED WORKS</p>
+          <h2>Gallery</h2>
+        </div>
+        <p class="intro-copy">その瞬間の光、表情、空気感。<br>少しずつ作品を増やしていきます。</p>
       </div>
 
       <div class="filters" aria-label="写真カテゴリー">
@@ -45,53 +53,92 @@
         <button class="filter" data-filter="nature">Nature</button>
       </div>
 
-      <div class="gallery-grid">
-        <figure class="photo-card" data-category="cat">
-          <button class="photo-button" data-full="images/cat-sleeping.jpg" data-title="Sunlit Nap" data-category="Cat">
-            <img src="images/cat-sleeping.jpg" alt="光の中で横になる猫" loading="lazy">
-            <figcaption><span>Sunlit Nap</span><small>Cat</small></figcaption>
+      <div class="featured-grid">
+        <article class="work featured" data-category="cat">
+          <button class="photo-button" data-full="images/cat-closeup.jpg" data-title="Curious Eyes" data-category="Cat" data-note="A quiet moment, seen up close.">
+            <div class="image-wrap">
+              <img src="images/cat-closeup.jpg" alt="こちらを見る猫の顔のクローズアップ" loading="lazy">
+              <span class="view-label">View photo ↗</span>
+            </div>
+            <div class="work-info">
+              <div>
+                <h3>Curious Eyes</h3>
+                <p>Cat</p>
+              </div>
+              <span class="work-no">01</span>
+            </div>
           </button>
-        </figure>
+        </article>
 
-        <figure class="photo-card photo-card-tall" data-category="cat">
-          <button class="photo-button" data-full="images/cat-closeup.jpg" data-title="Curious Eyes" data-category="Cat">
-            <img src="images/cat-closeup.jpg" alt="こちらを見る猫の顔のクローズアップ" loading="lazy">
-            <figcaption><span>Curious Eyes</span><small>Cat</small></figcaption>
+        <article class="work secondary" data-category="cat">
+          <button class="photo-button" data-full="images/cat-sleeping.jpg" data-title="Sunlit Nap" data-category="Cat" data-note="A warm afternoon at home.">
+            <div class="image-wrap">
+              <img src="images/cat-sleeping.jpg" alt="光の中で横になる猫" loading="lazy">
+              <span class="view-label">View photo ↗</span>
+            </div>
+            <div class="work-info">
+              <div>
+                <h3>Sunlit Nap</h3>
+                <p>Cat</p>
+              </div>
+              <span class="work-no">02</span>
+            </div>
           </button>
-        </figure>
+        </article>
+      </div>
+
+      <div class="coming-soon">
+        <span>MORE PHOTOS</span>
+        <p>新しい写真を追加すると、ここからギャラリーが広がっていきます。</p>
       </div>
     </section>
 
     <section id="about" class="section about-section">
-      <div class="about-number">01</div>
-      <div>
+      <div class="about-label">
         <p class="eyebrow">ABOUT</p>
-        <h2>日常を、<br>少し特別に。</h2>
-        <p class="about-text">
+        <span>02</span>
+      </div>
+      <div class="about-content">
+        <h2>日常を、<br><em>少し特別に。</em></h2>
+        <p>
           何気ない日常の中にある表情、光、空気感。
-          その瞬間にしか撮れないものを、自分の視点で残していく写真サイトです。
+          その瞬間にしか撮れないものを、自分の視点で残していく写真ポートフォリオです。
         </p>
+        <p class="about-small">Photography / Everyday / Moments</p>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div>
+        <p class="eyebrow">LET'S CONNECT</p>
+        <h2>See you<br><em>somewhere.</em></h2>
+      </div>
+      <div class="contact-links">
+        <a href="#" aria-label="Instagram link">Instagram <span>↗</span></a>
+        <a href="mailto:" aria-label="Email link">Email <span>↗</span></a>
       </div>
     </section>
   </main>
 
   <footer>
-    <div>
-      <strong>YU PHOTOGRAPHY</strong>
-      <p>Moments in ordinary life.</p>
-    </div>
-    <p>© 2026 YU Photography</p>
+    <strong>YU PHOTOGRAPHY</strong>
+    <span>© 2026 YU Photography</span>
   </footer>
 
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <button class="lightbox-close" aria-label="閉じる">×</button>
+    <button class="lightbox-prev" aria-label="前の写真">‹</button>
     <div class="lightbox-inner">
       <img id="lightbox-image" src="" alt="">
       <div class="lightbox-caption">
-        <strong id="lightbox-title"></strong>
+        <div>
+          <strong id="lightbox-title"></strong>
+          <span id="lightbox-note"></span>
+        </div>
         <span id="lightbox-category"></span>
       </div>
     </div>
+    <button class="lightbox-next" aria-label="次の写真">›</button>
   </div>
 
   <script src="script.js"></script>
