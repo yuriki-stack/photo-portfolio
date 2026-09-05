@@ -1,0 +1,16 @@
+[
+  {
+    "image": "images/cat-closeup.jpg",
+    "title": "Curious Eyes",
+    "category": "Cat",
+    "note": "A quiet moment, seen up close.",
+    "alt": "こちらを見る猫の顔のクローズアップ"
+  },
+  {
+    "image": "images/cat-sleeping.jpg",
+    "title": "Sunlit Nap",
+    "category": "Cat",
+    "note": "A warm afternoon at home.",
+    "alt": "光の中で横になる猫"
+  }
+]

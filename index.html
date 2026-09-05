@@ -13,13 +13,9 @@
 </head>
 <body>
   <header class="site-header">
-    <a class="logo" href="#top" aria-label="YU Photography home">
-      <strong>YU</strong><span>PHOTOGRAPHY</span>
-    </a>
+    <a class="logo" href="#top" aria-label="YU Photography home"><strong>YU</strong><span>PHOTOGRAPHY</span></a>
     <nav aria-label="メインナビゲーション">
-      <a href="#gallery">Gallery</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+      <a href="#gallery">Gallery</a><a href="#about">About</a><a href="#contact">Contact</a>
     </nav>
   </header>
 
@@ -33,86 +29,36 @@
         <p class="hero-copy">日常の中にある、ふと心に残る瞬間を。</p>
         <a class="hero-link" href="#gallery">Explore Gallery <span>↓</span></a>
       </div>
-      <div class="hero-index">01 / 02</div>
+      <div class="hero-index">01 / <span id="hero-count">02</span></div>
     </section>
 
     <section id="gallery" class="section gallery-section">
       <div class="section-intro">
-        <div>
-          <p class="eyebrow">SELECTED WORKS</p>
-          <h2>Gallery</h2>
-        </div>
-        <p class="intro-copy">その瞬間の光、表情、空気感。<br>少しずつ作品を増やしていきます。</p>
+        <div><p class="eyebrow">SELECTED WORKS</p><h2>Gallery</h2></div>
+        <p class="intro-copy">その瞬間の光、表情、空気感。<br>写真を追加するたび、作品集が広がっていきます。</p>
       </div>
 
-      <div class="filters" aria-label="写真カテゴリー">
-        <button class="filter active" data-filter="all">All</button>
-        <button class="filter" data-filter="cat">Cat</button>
-        <button class="filter" data-filter="landscape">Landscape</button>
-        <button class="filter" data-filter="city">City</button>
-        <button class="filter" data-filter="nature">Nature</button>
-      </div>
-
-      <div class="featured-grid">
-        <article class="work featured" data-category="cat">
-          <button class="photo-button" data-full="images/cat-closeup.jpg" data-title="Curious Eyes" data-category="Cat" data-note="A quiet moment, seen up close.">
-            <div class="image-wrap">
-              <img src="images/cat-closeup.jpg" alt="こちらを見る猫の顔のクローズアップ" loading="lazy">
-              <span class="view-label">View photo ↗</span>
-            </div>
-            <div class="work-info">
-              <div>
-                <h3>Curious Eyes</h3>
-                <p>Cat</p>
-              </div>
-              <span class="work-no">01</span>
-            </div>
-          </button>
-        </article>
-
-        <article class="work secondary" data-category="cat">
-          <button class="photo-button" data-full="images/cat-sleeping.jpg" data-title="Sunlit Nap" data-category="Cat" data-note="A warm afternoon at home.">
-            <div class="image-wrap">
-              <img src="images/cat-sleeping.jpg" alt="光の中で横になる猫" loading="lazy">
-              <span class="view-label">View photo ↗</span>
-            </div>
-            <div class="work-info">
-              <div>
-                <h3>Sunlit Nap</h3>
-                <p>Cat</p>
-              </div>
-              <span class="work-no">02</span>
-            </div>
-          </button>
-        </article>
-      </div>
+      <div class="filters" id="filters" aria-label="写真カテゴリー"></div>
+      <div class="featured-grid" id="gallery-grid" aria-live="polite"></div>
+      <div class="empty-state" id="empty-state" hidden>このカテゴリーにはまだ写真がありません。</div>
 
       <div class="coming-soon">
-        <span>MORE PHOTOS</span>
-        <p>新しい写真を追加すると、ここからギャラリーが広がっていきます。</p>
+        <span>HOW TO ADD</span>
+        <p>写真を <code>images</code> に追加し、<code>photos.json</code> に1件登録するだけ。</p>
       </div>
     </section>
 
     <section id="about" class="section about-section">
-      <div class="about-label">
-        <p class="eyebrow">ABOUT</p>
-        <span>02</span>
-      </div>
+      <div class="about-label"><p class="eyebrow">ABOUT</p><span>02</span></div>
       <div class="about-content">
         <h2>日常を、<br><em>少し特別に。</em></h2>
-        <p>
-          何気ない日常の中にある表情、光、空気感。
-          その瞬間にしか撮れないものを、自分の視点で残していく写真ポートフォリオです。
-        </p>
+        <p>何気ない日常の中にある表情、光、空気感。その瞬間にしか撮れないものを、自分の視点で残していく写真ポートフォリオです。</p>
         <p class="about-small">Photography / Everyday / Moments</p>
       </div>
     </section>
 
     <section id="contact" class="contact-section">
-      <div>
-        <p class="eyebrow">LET'S CONNECT</p>
-        <h2>See you<br><em>somewhere.</em></h2>
-      </div>
+      <div><p class="eyebrow">LET'S CONNECT</p><h2>See you<br><em>somewhere.</em></h2></div>
       <div class="contact-links">
         <a href="#" aria-label="Instagram link">Instagram <span>↗</span></a>
         <a href="mailto:" aria-label="Email link">Email <span>↗</span></a>
@@ -120,10 +66,7 @@
     </section>
   </main>
 
-  <footer>
-    <strong>YU PHOTOGRAPHY</strong>
-    <span>© 2026 YU Photography</span>
-  </footer>
+  <footer><strong>YU PHOTOGRAPHY</strong><span>© 2026 YU Photography</span></footer>
 
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <button class="lightbox-close" aria-label="閉じる">×</button>
@@ -131,10 +74,7 @@
     <div class="lightbox-inner">
       <img id="lightbox-image" src="" alt="">
       <div class="lightbox-caption">
-        <div>
-          <strong id="lightbox-title"></strong>
-          <span id="lightbox-note"></span>
-        </div>
+        <div><strong id="lightbox-title"></strong><span id="lightbox-note"></span></div>
         <span id="lightbox-category"></span>
       </div>
     </div>
