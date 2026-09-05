@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="YU Photography - 日常の中にある瞬間を切り取る写真ポートフォリオ。">
+  <title>YU Photography</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="#">YU <span>PHOTOGRAPHY</span></a>
+    <nav>
+      <a href="#gallery">Gallery</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img src="images/cat-sleeping.jpg" alt="光の中でくつろぐ猫">
+      <div class="hero-overlay">
+        <p class="eyebrow">PHOTO PORTFOLIO</p>
+        <h1>Moments<br><em>in ordinary life.</em></h1>
+        <p class="hero-copy">日常の中にある、ふと心に残る瞬間を。</p>
+        <a class="scroll-link" href="#gallery">Explore Gallery ↓</a>
+      </div>
+    </section>
+
+    <section id="gallery" class="section gallery-section">
+      <div class="section-heading">
+        <p class="eyebrow">SELECTED WORKS</p>
+        <h2>Gallery</h2>
+        <p>今後、撮影した写真をここに追加していきます。</p>
+      </div>
+
+      <div class="filters" aria-label="写真カテゴリー">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="cat">Cat</button>
+        <button class="filter" data-filter="landscape">Landscape</button>
+        <button class="filter" data-filter="city">City</button>
+        <button class="filter" data-filter="nature">Nature</button>
+      </div>
+
+      <div class="gallery-grid">
+        <figure class="photo-card" data-category="cat">
+          <button class="photo-button" data-full="images/cat-sleeping.jpg" data-title="Sunlit Nap" data-category="Cat">
+            <img src="images/cat-sleeping.jpg" alt="光の中で横になる猫" loading="lazy">
+            <figcaption><span>Sunlit Nap</span><small>Cat</small></figcaption>
+          </button>
+        </figure>
+
+        <figure class="photo-card photo-card-tall" data-category="cat">
+          <button class="photo-button" data-full="images/cat-closeup.jpg" data-title="Curious Eyes" data-category="Cat">
+            <img src="images/cat-closeup.jpg" alt="こちらを見る猫の顔のクローズアップ" loading="lazy">
+            <figcaption><span>Curious Eyes</span><small>Cat</small></figcaption>
+          </button>
+        </figure>
+      </div>
+    </section>
+
+    <section id="about" class="section about-section">
+      <div class="about-number">01</div>
+      <div>
+        <p class="eyebrow">ABOUT</p>
+        <h2>日常を、<br>少し特別に。</h2>
+        <p class="about-text">
+          何気ない日常の中にある表情、光、空気感。
+          その瞬間にしか撮れないものを、自分の視点で残していく写真サイトです。
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <strong>YU PHOTOGRAPHY</strong>
+      <p>Moments in ordinary life.</p>
+    </div>
+    <p>© 2026 YU Photography</p>
+  </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" aria-label="閉じる">×</button>
+    <div class="lightbox-inner">
+      <img id="lightbox-image" src="" alt="">
+      <div class="lightbox-caption">
+        <strong id="lightbox-title"></strong>
+        <span id="lightbox-category"></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
