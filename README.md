@@ -1,21 +1,33 @@
-# YU Photography
+# YU PHOTOGRAPHY — Version 5
 
-写真ポートフォリオサイトの初期版です。
+## Files
+- `index.html` — page structure
+- `style.css` — design and responsive layout
+- `script.js` — gallery, filters, modal, keyboard and swipe controls
+- `photos.json` — photo information
+- `images/` — 5 photos used by the site
 
-## ファイル構成
+## Updating photos
+1. Put a new image in `images/`.
+2. Add one object to `photos.json`.
+3. Upload the changed files to GitHub.
+4. GitHub Pages will update the site.
 
-- `index.html` : サイト本体
-- `style.css` : デザイン
-- `script.js` : カテゴリ絞り込み・写真拡大
-- `images/` : 公開用写真
+Example:
+```json
+{
+  "image":"images/my-photo.jpg",
+  "title":"My New Photo",
+  "category":"Cat",
+  "date":"2026.09.06",
+  "location":"Tokyo",
+  "note":"A short description.",
+  "alt":"Description of the photo"
+}
+```
 
-## 写真を追加する方法
+## Important
+Change the placeholder email in `index.html`:
+`your-email@example.com`
 
-1. `images/` に写真を入れる
-2. `index.html` の Gallery に写真カードを追加
-3. `data-category` を `cat / landscape / city / nature` などに設定
-4. GitHubへアップロードするとサイトを更新できます
-
-## GitHub Pages
-
-GitHubのリポジトリにこのフォルダの中身をアップロードし、Settings → Pages から公開設定を行ってください。
+Do not delete the `images` folder or `photos.json`.

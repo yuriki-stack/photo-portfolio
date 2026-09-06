@@ -4,7 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="YU PHOTOGRAPHY — 日常の中にある、ふと心に残る瞬間を。">
-  <title>YU PHOTOGRAPHY</title>
+  <meta name="theme-color" content="#101112">
+  <meta property="og:title" content="YU PHOTOGRAPHY">
+  <meta property="og:description" content="Moments in ordinary life.">
+  <meta property="og:type" content="website">
+  <title>YU PHOTOGRAPHY — Moments in ordinary life.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Noto+Sans+JP:wght@300;400;500&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
@@ -12,10 +16,14 @@
 </head>
 <body>
   <header class="hero" id="top">
-    <nav class="nav">
+    <nav class="nav" aria-label="メインナビゲーション">
       <a href="#top" class="logo"><strong>YU</strong><span>PHOTOGRAPHY</span></a>
       <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">☰</button>
-      <div class="nav-links"><a href="#gallery">Gallery</a><a href="#about">About</a></div>
+      <div class="nav-links">
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
     </nav>
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -28,18 +36,38 @@
 
   <main>
     <section class="gallery-section" id="gallery">
-      <div class="section-heading"><p class="eyebrow">SELECTED WORKS</p><h2>Gallery</h2></div>
-      <div class="filters" id="filters"></div>
+      <div class="section-heading">
+        <p class="eyebrow">SELECTED WORKS</p>
+        <h2>Gallery</h2>
+        <p class="section-lead">何気ない瞬間を、5つの写真に。</p>
+      </div>
+      <div class="gallery-tools">
+        <div class="filters" id="filters" aria-label="写真カテゴリー"></div>
+        <p class="photo-count"><span id="photo-count">0</span> works</p>
+      </div>
       <div class="gallery-grid" id="gallery-grid" aria-live="polite"></div>
     </section>
 
     <section class="about" id="about">
-      <div>
+      <div class="about-copy">
         <p class="eyebrow">ABOUT</p>
         <h2>日常を、少し特別に。</h2>
         <p>何気ない日常の中には、心が動く瞬間がたくさんあります。<br>その一瞬を写真に残し、そっとお届けします。</p>
       </div>
-      <div class="about-links"><a href="mailto:your-email@example.com">Email <span>↗</span></a><a href="#top">Back to top <span>↑</span></a></div>
+      <div class="about-links">
+        <a href="#gallery">View selected works <span>↘</span></a>
+        <a href="#contact">Get in touch <span>↘</span></a>
+        <a href="#top">Back to top <span>↑</span></a>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div>
+        <p class="eyebrow">CONTACT</p>
+        <h2>Let's talk about photography.</h2>
+        <p>写真についてのお問い合わせやご感想など、お気軽にどうぞ。</p>
+      </div>
+      <a class="contact-button" href="mailto:your-email@example.com">Email me <span>↗</span></a>
     </section>
   </main>
 
@@ -47,12 +75,15 @@
     <button class="modal-close" aria-label="閉じる">×</button>
     <button class="modal-nav prev" aria-label="前の写真">←</button>
     <div class="modal-inner">
-      <img id="modal-image" src="" alt="">
+      <div class="modal-photo-wrap">
+        <img id="modal-image" src="" alt="">
+      </div>
       <div class="photo-info">
         <p class="eyebrow" id="modal-category"></p>
         <h2 id="modal-title"></h2>
         <div class="meta"><span id="modal-date"></span><span id="modal-location"></span></div>
         <p id="modal-note"></p>
+        <p class="modal-hint">← → で写真を移動 · Esc で閉じる</p>
       </div>
     </div>
     <button class="modal-nav next" aria-label="次の写真">→</button>
