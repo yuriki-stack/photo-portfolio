@@ -1,47 +1,47 @@
 [
   {
-    "image": "images/cat-sleeping.jpg",
-    "title": "Sunlit Nap",
-    "category": "Cat",
-    "date": "2018.04.27",
-    "location": "Home",
-    "note": "光が差し込む、穏やかな午後。",
-    "alt": "陽だまりの中で横になる猫"
-  },
-  {
-    "image": "images/cat-closeup.jpg",
+    "image": "images/cat/2025-10-26-curious-eyes.jpg",
     "title": "Curious Eyes",
     "category": "Cat",
     "date": "2025.10.26",
-    "location": "Home",
-    "note": "何かを見つけた瞬間の、まっすぐな視線。",
-    "alt": "こちらを見つめる猫の顔"
+    "location": "",
+    "note": "",
+    "alt": "Curious Eyes — Cat photograph"
   },
   {
-    "image": "images/cat-curious-eyes.jpg",
-    "title": "Dinner Time",
-    "category": "Cat",
-    "date": "2022.12.10",
-    "location": "Home",
-    "note": "ごはんの時間を、じっと待つ。",
-    "alt": "器を前にしてごはんを見つめる猫"
-  },
-  {
-    "image": "images/cat-looking-up.jpg",
+    "image": "images/cat/2025-10-26-looking-up.jpg",
     "title": "Looking Up",
     "category": "Cat",
     "date": "2025.10.26",
-    "location": "Home",
-    "note": "ふと見上げた先に、何があるんだろう。",
-    "alt": "上を見上げる猫のモノクロ写真"
+    "location": "",
+    "note": "",
+    "alt": "Looking Up — Cat photograph"
   },
   {
-    "image": "images/cat-big-stretch.jpg",
+    "image": "images/cat/2024-12-31-big-stretch.jpg",
     "title": "Big Stretch",
     "category": "Cat",
     "date": "2024.12.31",
-    "location": "Home",
-    "note": "眠気も一緒に吹き飛ばす、大きなあくび。",
-    "alt": "大きくあくびをする猫"
+    "location": "",
+    "note": "",
+    "alt": "Big Stretch — Cat photograph"
+  },
+  {
+    "image": "images/cat/2022-12-10-dinner-time.jpg",
+    "title": "Dinner Time",
+    "category": "Cat",
+    "date": "2022.12.10",
+    "location": "",
+    "note": "",
+    "alt": "Dinner Time — Cat photograph"
+  },
+  {
+    "image": "images/cat/2018-04-27-sunlit-nap.jpg",
+    "title": "Sunlit Nap",
+    "category": "Cat",
+    "date": "2018.04.27",
+    "location": "",
+    "note": "",
+    "alt": "Sunlit Nap — Cat photograph"
   }
 ]

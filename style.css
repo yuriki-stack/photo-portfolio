@@ -9,7 +9,7 @@ body.modal-open{overflow:hidden}
 a,button{font:inherit}
 .hero{
   height:100svh;min-height:650px;position:relative;
-  background-image:url('images/cat-sleeping.jpg');
+  background-image:url('images/cat/2018-04-27-sunlit-nap.jpg');
   background-position:center;background-size:cover;background-repeat:no-repeat;
 }
 .hero-overlay{
