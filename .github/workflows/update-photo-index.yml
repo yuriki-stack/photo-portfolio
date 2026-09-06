@@ -1,0 +1,34 @@
+name: Update photo index
+
+on:
+  push:
+    paths:
+      - 'images/**'
+      - 'scripts/generate-photos.py'
+      - '.github/workflows/update-photo-index.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Generate photos.json
+        run: python scripts/generate-photos.py
+
+      - name: Commit generated index
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add photos.json
+          if git diff --cached --quiet; then
+            echo 'No changes to photos.json.'
+          else
+            git commit -m 'chore: update photo index'
+            git push
+          fi
