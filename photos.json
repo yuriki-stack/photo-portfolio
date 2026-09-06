@@ -1,16 +1,47 @@
 [
   {
-    "image": "images/cat-closeup.jpg",
-    "title": "Curious Eyes",
-    "category": "Cat",
-    "note": "A quiet moment, seen up close.",
-    "alt": "こちらを見る猫の顔のクローズアップ"
+    "image":"images/cat-sleeping.jpg",
+    "title":"Sunlit Nap",
+    "category":"Cat",
+    "date":"2018.04.27",
+    "location":"Home",
+    "note":"光が差し込む、穏やかな午後。",
+    "alt":"陽だまりの中で横になる猫"
   },
   {
-    "image": "images/cat-sleeping.jpg",
-    "title": "Sunlit Nap",
-    "category": "Cat",
-    "note": "A warm afternoon at home.",
-    "alt": "光の中で横になる猫"
+    "image":"images/cat-closeup.jpg",
+    "title":"Curious Eyes",
+    "category":"Cat",
+    "date":"2025.10.26",
+    "location":"Home",
+    "note":"何かを見つけた瞬間の、まっすぐな視線。",
+    "alt":"顔をこちらに向ける猫"
+  },
+  {
+    "image":"images/cat-curious-eyes.jpg",
+    "title":"Dinner Time",
+    "category":"Cat",
+    "date":"2022.12.10",
+    "location":"Home",
+    "note":"ごはんの時間を、じっと待つ。",
+    "alt":"器を前にしてごはんを見つめる猫"
+  },
+  {
+    "image":"images/cat-looking-up.jpg",
+    "title":"Looking Up",
+    "category":"Cat",
+    "date":"2025.10.26",
+    "location":"Home",
+    "note":"ふと見上げた先に、何があるんだろう。",
+    "alt":"上から見上げる猫のモノクロ写真"
+  },
+  {
+    "image":"images/cat-big-stretch.jpg",
+    "title":"Big Stretch",
+    "category":"Cat",
+    "date":"2024.12.31",
+    "location":"Home",
+    "note":"眠気も一緒に吹き飛ばす、大きなあくび。",
+    "alt":"大きくあくびをする猫"
   }
 ]

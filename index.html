@@ -3,84 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="YU Photography - 日常の中にある、ふと心に残る瞬間を。">
-  <meta name="theme-color" content="#111111">
-  <title>YU Photography | Photo Portfolio</title>
+  <meta name="description" content="YU PHOTOGRAPHY — 日常の中にある、ふと心に残る瞬間を。">
+  <title>YU PHOTOGRAPHY</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Noto+Sans+JP:wght@300;400;500&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <a class="logo" href="#top" aria-label="YU Photography home"><strong>YU</strong><span>PHOTOGRAPHY</span></a>
-    <nav aria-label="メインナビゲーション">
-      <a href="#gallery">Gallery</a><a href="#about">About</a><a href="#contact">Contact</a>
+  <header class="hero" id="top">
+    <nav class="nav">
+      <a href="#top" class="logo"><strong>YU</strong><span>PHOTOGRAPHY</span></a>
+      <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">☰</button>
+      <div class="nav-links"><a href="#gallery">Gallery</a><a href="#about">About</a></div>
     </nav>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="eyebrow">PHOTO PORTFOLIO</p>
+      <h1>Moments<br><em>in ordinary life.</em></h1>
+      <p class="hero-copy">日常の中にある、ふと心に残る瞬間を。</p>
+      <a href="#gallery" class="explore">Explore Gallery <span>↓</span></a>
+    </div>
   </header>
 
-  <main id="top">
-    <section class="hero" aria-label="メインビジュアル">
-      <img src="images/cat-sleeping.jpg" alt="光の中でくつろぐ猫">
-      <div class="hero-shade"></div>
-      <div class="hero-content">
-        <p class="eyebrow">PHOTO PORTFOLIO</p>
-        <h1>Moments<br><em>in ordinary life.</em></h1>
-        <p class="hero-copy">日常の中にある、ふと心に残る瞬間を。</p>
-        <a class="hero-link" href="#gallery">Explore Gallery <span>↓</span></a>
-      </div>
-      <div class="hero-index">01 / <span id="hero-count">02</span></div>
+  <main>
+    <section class="gallery-section" id="gallery">
+      <div class="section-heading"><p class="eyebrow">SELECTED WORKS</p><h2>Gallery</h2></div>
+      <div class="filters" id="filters"></div>
+      <div class="gallery-grid" id="gallery-grid" aria-live="polite"></div>
     </section>
 
-    <section id="gallery" class="section gallery-section">
-      <div class="section-intro">
-        <div><p class="eyebrow">SELECTED WORKS</p><h2>Gallery</h2></div>
-        <p class="intro-copy">その瞬間の光、表情、空気感。<br>写真を追加するたび、作品集が広がっていきます。</p>
+    <section class="about" id="about">
+      <div>
+        <p class="eyebrow">ABOUT</p>
+        <h2>日常を、少し特別に。</h2>
+        <p>何気ない日常の中には、心が動く瞬間がたくさんあります。<br>その一瞬を写真に残し、そっとお届けします。</p>
       </div>
-
-      <div class="filters" id="filters" aria-label="写真カテゴリー"></div>
-      <div class="featured-grid" id="gallery-grid" aria-live="polite"></div>
-      <div class="empty-state" id="empty-state" hidden>このカテゴリーにはまだ写真がありません。</div>
-
-      <div class="coming-soon">
-        <span>HOW TO ADD</span>
-        <p>写真を <code>images</code> に追加し、<code>photos.json</code> に1件登録するだけ。</p>
-      </div>
-    </section>
-
-    <section id="about" class="section about-section">
-      <div class="about-label"><p class="eyebrow">ABOUT</p><span>02</span></div>
-      <div class="about-content">
-        <h2>日常を、<br><em>少し特別に。</em></h2>
-        <p>何気ない日常の中にある表情、光、空気感。その瞬間にしか撮れないものを、自分の視点で残していく写真ポートフォリオです。</p>
-        <p class="about-small">Photography / Everyday / Moments</p>
-      </div>
-    </section>
-
-    <section id="contact" class="contact-section">
-      <div><p class="eyebrow">LET'S CONNECT</p><h2>See you<br><em>somewhere.</em></h2></div>
-      <div class="contact-links">
-        <a href="#" aria-label="Instagram link">Instagram <span>↗</span></a>
-        <a href="mailto:" aria-label="Email link">Email <span>↗</span></a>
-      </div>
+      <div class="about-links"><a href="mailto:your-email@example.com">Email <span>↗</span></a><a href="#top">Back to top <span>↑</span></a></div>
     </section>
   </main>
 
-  <footer><strong>YU PHOTOGRAPHY</strong><span>© 2026 YU Photography</span></footer>
-
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="lightbox-close" aria-label="閉じる">×</button>
-    <button class="lightbox-prev" aria-label="前の写真">‹</button>
-    <div class="lightbox-inner">
-      <img id="lightbox-image" src="" alt="">
-      <div class="lightbox-caption">
-        <div><strong id="lightbox-title"></strong><span id="lightbox-note"></span></div>
-        <span id="lightbox-category"></span>
+  <div class="modal" id="photo-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="写真詳細">
+    <button class="modal-close" aria-label="閉じる">×</button>
+    <button class="modal-nav prev" aria-label="前の写真">←</button>
+    <div class="modal-inner">
+      <img id="modal-image" src="" alt="">
+      <div class="photo-info">
+        <p class="eyebrow" id="modal-category"></p>
+        <h2 id="modal-title"></h2>
+        <div class="meta"><span id="modal-date"></span><span id="modal-location"></span></div>
+        <p id="modal-note"></p>
       </div>
     </div>
-    <button class="lightbox-next" aria-label="次の写真">›</button>
+    <button class="modal-nav next" aria-label="次の写真">→</button>
   </div>
 
+  <footer>© YU PHOTOGRAPHY</footer>
   <script src="script.js"></script>
 </body>
 </html>
