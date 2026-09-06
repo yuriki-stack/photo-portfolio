@@ -1,5 +1,5 @@
 let photos=[], filtered=[], current=0, selectedCategory='All', selectedTag='All', newest=true;
-let currentLang = document.documentElement.lang === 'en' ? 'en' : 'ja';
+let currentLang = 'ja';
 const $=s=>document.querySelector(s);
 const grid=$('#galleryGrid'),filters=$('#filters'),tagFilters=$('#tagFilters'),modal=$('#modal');
 const likes=JSON.parse(localStorage.getItem('yuPhotoLikes')||'{}');
@@ -24,7 +24,8 @@ function applyLanguage(){
   document.querySelectorAll('[data-ja][data-en]').forEach(el=>{
     el.textContent=el.dataset[currentLang];
   });
-  $('#langBtn').textContent=currentLang==='ja'?'EN':'JP';
+  $('#langBtn').textContent=currentLang.toUpperCase();
+  $('#langBtn').setAttribute('aria-label',currentLang==='ja'?'Switch to English':'日本語に切り替え');
   $('#searchInput').placeholder=labels[currentLang].search;
   $('#searchInput').setAttribute('aria-label',labels[currentLang].search);
   $('#sortBtn').textContent=newest?labels[currentLang].newest:labels[currentLang].oldest;
@@ -37,6 +38,7 @@ function applyLanguage(){
 }
 
 async function init(){
+  applyLanguage();
   try{
     photos=await (await fetch('photos.json?'+Date.now())).json();
     renderFeatured();
