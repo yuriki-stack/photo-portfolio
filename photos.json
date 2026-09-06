@@ -1,5 +1,23 @@
 [
   {
+    "image": "images/travel/2026-08-22-ginga-iwate-photo.jpg",
+    "title": "Ginga Iwate Photo",
+    "category": "Travel",
+    "date": "2026.08.22",
+    "location": "",
+    "note": "",
+    "alt": "Ginga Iwate Photo — Travel photograph"
+  },
+  {
+    "image": "images/travel/2026-08-22-ginga-iwate2-photo.jpg",
+    "title": "Ginga Iwate2 Photo",
+    "category": "Travel",
+    "date": "2026.08.22",
+    "location": "",
+    "note": "",
+    "alt": "Ginga Iwate2 Photo — Travel photograph"
+  },
+  {
     "image": "images/cat/2025-10-26-curious-eyes.jpg",
     "title": "Curious Eyes",
     "category": "Cat",
@@ -25,6 +43,15 @@
     "location": "",
     "note": "",
     "alt": "Big Stretch — Cat photograph"
+  },
+  {
+    "image": "images/cat/2023-01-09_sleeping-cat.jpg",
+    "title": "Sleeping Cat",
+    "category": "Cat",
+    "date": "2023.01.09",
+    "location": "",
+    "note": "",
+    "alt": "Sleeping Cat — Cat photograph"
   },
   {
     "image": "images/cat/2022-12-10-dinner-time.jpg",
