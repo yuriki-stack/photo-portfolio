@@ -6,6 +6,13 @@
     "date": "2026.08.22",
     "location": "",
     "note": "",
+    "tags": [
+      "travel",
+      "ginga",
+      "iwate",
+      "photo"
+    ],
+    "featured": false,
     "alt": "Ginga Iwate Photo — Travel photograph"
   },
   {
@@ -15,6 +22,13 @@
     "date": "2026.08.22",
     "location": "",
     "note": "",
+    "tags": [
+      "travel",
+      "ginga",
+      "iwate2",
+      "photo"
+    ],
+    "featured": false,
     "alt": "Ginga Iwate2 Photo — Travel photograph"
   },
   {
@@ -24,6 +38,12 @@
     "date": "2025.10.26",
     "location": "",
     "note": "",
+    "tags": [
+      "cat",
+      "curious",
+      "eyes"
+    ],
+    "featured": false,
     "alt": "Curious Eyes — Cat photograph"
   },
   {
@@ -33,6 +53,12 @@
     "date": "2025.10.26",
     "location": "",
     "note": "",
+    "tags": [
+      "cat",
+      "looking",
+      "up"
+    ],
+    "featured": false,
     "alt": "Looking Up — Cat photograph"
   },
   {
@@ -42,6 +68,12 @@
     "date": "2024.12.31",
     "location": "",
     "note": "",
+    "tags": [
+      "cat",
+      "big",
+      "stretch"
+    ],
+    "featured": false,
     "alt": "Big Stretch — Cat photograph"
   },
   {
@@ -51,6 +83,11 @@
     "date": "2023.01.09",
     "location": "",
     "note": "",
+    "tags": [
+      "cat",
+      "sleeping"
+    ],
+    "featured": false,
     "alt": "Sleeping Cat — Cat photograph"
   },
   {
@@ -60,6 +97,12 @@
     "date": "2022.12.10",
     "location": "",
     "note": "",
+    "tags": [
+      "cat",
+      "dinner",
+      "time"
+    ],
+    "featured": false,
     "alt": "Dinner Time — Cat photograph"
   },
   {
@@ -69,6 +112,12 @@
     "date": "2018.04.27",
     "location": "",
     "note": "",
+    "tags": [
+      "cat",
+      "sunlit",
+      "nap"
+    ],
+    "featured": false,
     "alt": "Sunlit Nap — Cat photograph"
   }
 ]
