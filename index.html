@@ -7,55 +7,76 @@
 <meta name="description" content="YU PHOTOGRAPHY - 日常の中にある、ふと心に残る瞬間を。">
 <meta name="keywords" content="photography,写真,猫,風景,旅行,YU PHOTOGRAPHY">
 <meta name="author" content="YU PHOTOGRAPHY">
+<meta name="theme-color" content="#0b0b0b">
 <meta property="og:title" content="YU PHOTOGRAPHY">
 <meta property="og:description" content="Moments in ordinary life.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="images/cat/2018-04-27-sunlit-nap.jpg">
+<meta property="og:site_name" content="YU PHOTOGRAPHY">
 <link rel="canonical" href="https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/">
+<link rel="preconnect" href="https://www.googletagmanager.com">
 <link rel="stylesheet" href="style.css">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"ImageGallery",
+  "name":"YU PHOTOGRAPHY",
+  "description":"Moments in ordinary life.",
+  "url":"https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/"
+}
+</script>
 </head>
 <body>
 <header class="site-header">
   <a class="brand" href="#top">YU PHOTOGRAPHY</a>
-  <nav>
+  <nav id="siteNav">
+    <a href="#featured" data-ja="おすすめ" data-en="Featured">おすすめ</a>
     <a href="#gallery" data-ja="ギャラリー" data-en="Gallery">ギャラリー</a>
     <a href="#about" data-ja="概要" data-en="About">概要</a>
     <a href="#contact" data-ja="お問い合わせ" data-en="Contact">お問い合わせ</a>
   </nav>
   <button id="langBtn" class="small-btn" aria-label="Switch to English">EN</button>
-  <button id="menuBtn" class="menu-btn" aria-label="Menu">☰</button>
+  <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false">☰</button>
 </header>
 
 <main id="top">
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-copy">
-    <span data-ja="PHOTO PORTFOLIO" data-en="PHOTO PORTFOLIO">PHOTO PORTFOLIO</span>
+    <span>PHOTO PORTFOLIO</span>
     <h1>Moments<br><em>in ordinary life.</em></h1>
     <p data-ja="日常の中にある、ふと心に残る瞬間を。" data-en="Small moments from everyday life, captured and shared.">日常の中にある、ふと心に残る瞬間を。</p>
     <a href="#gallery" class="cta" data-ja="ギャラリーを見る ↓" data-en="Explore Gallery ↓">ギャラリーを見る ↓</a>
   </div>
 </section>
 
+<section id="featured" class="gallery-section featured-section">
+  <div class="section-head">
+    <div><span class="eyebrow" data-ja="おすすめ" data-en="FEATURED">おすすめ</span><h2 data-ja="お気に入りの一枚" data-en="Featured photographs">お気に入りの一枚</h2></div>
+    <p class="section-note" data-ja="ファイル名に featured を入れた写真を優先表示します。" data-en="Photos with 'featured' in the filename are shown here first.">ファイル名に featured を入れた写真を優先表示します。</p>
+  </div>
+  <div id="featuredGrid" class="gallery-grid featured-grid"></div>
+</section>
+
 <section id="gallery" class="gallery-section">
   <div class="section-head">
-    <div>
-      <span class="eyebrow" data-ja="SELECTED WORKS" data-en="SELECTED WORKS">SELECTED WORKS</span>
-      <h2 data-ja="ギャラリー" data-en="Gallery">ギャラリー</h2>
-    </div>
+    <div><span class="eyebrow" data-ja="SELECTED WORKS" data-en="SELECTED WORKS">SELECTED WORKS</span><h2 data-ja="ギャラリー" data-en="Gallery">ギャラリー</h2></div>
     <div class="tools">
-      <label class="search">
-        <span>⌕</span>
-        <input id="searchInput" type="search" placeholder="写真を検索..." aria-label="写真を検索">
-      </label>
+      <label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="写真を検索..." data-placeholder-ja="写真を検索..." data-placeholder-en="Search photos..." aria-label="写真を検索"></label>
       <button id="sortBtn" class="tool-btn">新しい順 ↓</button>
     </div>
   </div>
-  <div id="filters" class="filters"></div>
+  <div class="filter-row">
+    <div id="filters" class="filters"></div>
+    <div class="date-filters">
+      <label><span data-ja="年" data-en="Year">年</span><select id="yearFilter"><option value="All">すべて</option></select></label>
+      <label><span data-ja="月" data-en="Month">月</span><select id="monthFilter"><option value="All">すべて</option></select></label>
+    </div>
+  </div>
   <div id="tagFilters" class="tag-filters"></div>
-  <p id="count" class="count"></p>
+  <div class="gallery-status"><p id="count" class="count"></p><button id="clearFilters" class="clear-btn" data-ja="絞り込みをリセット" data-en="Reset filters">絞り込みをリセット</button></div>
   <div id="galleryGrid" class="gallery-grid"></div>
   <div id="empty" class="empty" hidden>写真が見つかりません。</div>
 </section>
@@ -67,22 +88,22 @@
     <p data-ja="何気ない日常の中には、心が動く瞬間がたくさんあります。その一瞬を写真に残し、そっとお届けします。" data-en="There are countless moments in ordinary days that make us pause. I photograph and share those moments quietly.">何気ない日常の中には、心が動く瞬間がたくさんあります。<br>その一瞬を写真に残し、そっとお届けします。</p>
   </div>
   <div class="about-links">
-    <a id="instagramLink" href="https://www.instagram.com/" target="_blank" rel="noopener" data-ja="Instagram ↗" data-en="Instagram ↗">Instagram ↗</a>
-    <a href="mailto:YOUR_EMAIL@example.com" data-ja="Email ↗" data-en="Email ↗">Email ↗</a>
+    <a id="instagramLink" href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram ↗</a>
+    <a href="mailto:YOUR_EMAIL@example.com">Email ↗</a>
   </div>
 </section>
 
 <section id="contact" class="contact">
-  <span class="eyebrow" data-ja="お問い合わせ" data-en="CONTACT">お問い合わせ</span>
-  <h2 data-ja="お問い合わせ" data-en="Let's connect.">お問い合わせ</h2>
-  <p data-ja="写真についてのご連絡・ご依頼はこちらから。" data-en="For photography inquiries and requests, please get in touch here.">写真についてのご連絡・ご依頼はこちらから。</p>
-  <a class="contact-btn" href="mailto:YOUR_EMAIL@example.com" data-ja="メールを送る" data-en="Send Email">Send Email</a>
+  <span class="eyebrow" data-ja="お問い合わせ・撮影依頼" data-en="CONTACT & COMMISSIONS">お問い合わせ・撮影依頼</span>
+  <h2 data-ja="写真について相談する" data-en="Let's work together.">写真について相談する</h2>
+  <p data-ja="写真の掲載、撮影、作品についてのご連絡はこちらから。" data-en="For photography inquiries, collaborations, and commissions, please get in touch.">写真の掲載、撮影、作品についてのご連絡はこちらから。</p>
+  <a class="contact-btn" href="mailto:YOUR_EMAIL@example.com" data-ja="メールを送る" data-en="Send Email">メールを送る</a>
 </section>
 </main>
 
 <footer data-ja="© YU PHOTOGRAPHY" data-en="© YU PHOTOGRAPHY">© YU PHOTOGRAPHY</footer>
 
-<div id="modal" class="modal" aria-hidden="true">
+<div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Photo viewer">
   <button id="closeModal" class="modal-close" aria-label="閉じる">×</button>
   <button id="prevBtn" class="modal-nav prev" aria-label="前の写真">‹</button>
   <div class="modal-content">
@@ -92,12 +113,13 @@
       <p id="modalMeta"></p>
       <p id="modalNote"></p>
       <div class="modal-actions">
+        <button id="favoriteBtn">☆ <span data-ja="お気に入り" data-en="Favorite">お気に入り</span></button>
         <button id="likeBtn">♡ <span id="likeCount">0</span></button>
         <button id="shareBtn" data-ja="共有" data-en="Share">共有</button>
       </div>
     </div>
   </div>
-  <button id="nextBtn" class="modal-nav next" aria-label="Next">›</button>
+  <button id="nextBtn" class="modal-nav next" aria-label="次の写真">›</button>
 </div>
 
 <script src="script.js"></script>

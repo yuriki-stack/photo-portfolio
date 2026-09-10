@@ -1,60 +1,58 @@
 from pathlib import Path
-import json, re
+import json,re
 
-ROOT = Path(__file__).resolve().parents[1]
-IMAGE_ROOT = ROOT / 'images'
-OUTPUT = ROOT / 'photos.json'
-EXTS = {'.jpg', '.jpeg', '.png', '.webp', '.gif'}
-DATE_RE = re.compile(r'^(\d{4})-(\d{2})-(\d{2})[-_](.+)$')
-
-
-def clean_title(stem: str) -> tuple[str, str]:
-    m = DATE_RE.match(stem)
-    date = f'{m.group(1)}.{m.group(2)}.{m.group(3)}' if m else ''
-    title = m.group(4) if m else stem
-    title = re.sub(r'[_-]+', ' ', title).strip()
-    title = re.sub(r'\s+', ' ', title)
-    if title.isascii():
-        title = title.title()
-    return title or 'Untitled', date
+ROOT=Path(__file__).resolve().parents[1]
+IMG=ROOT/'images'
+OUT=ROOT/'photos.json'
+EXT={'.jpg','.jpeg','.png','.webp','.gif'}
 
 
-def category_for(path: Path) -> str:
-    rel_parent = path.parent.relative_to(IMAGE_ROOT)
-    if str(rel_parent) in ('.', ''):
-        return 'Photo'
-    name = rel_parent.parts[0].replace('-', ' ').replace('_', ' ').strip()
-    return name.title() if name.isascii() else name
+def title_date(stem):
+    m=re.match(r'^(\d{4})-(\d{2})-(\d{2})[-_](.+)$',stem)
+    if not m:
+        return stem.replace('-',' ').replace('_',' ').title(),''
+    raw=m.group(4)
+    raw=re.sub(r'(^|[-_])featured(?=[-_]|$)',' ',raw,flags=re.I)
+    title=re.sub(r'\s+',' ',raw.replace('-',' ').replace('_',' ')).strip().title()
+    return title,f'{m.group(1)}.{m.group(2)}.{m.group(3)}'
 
 
-def make_alt(title: str, category: str) -> str:
-    return f'{title} — {category} photograph'
+def tags_for(path):
+    rel=path.relative_to(IMG)
+    parts=list(rel.parts[:-1])
+    stem=path.stem
+    m=re.match(r'^\d{4}-\d{2}-\d{2}[-_](.+)$',stem)
+    words=[]
+    if m:
+        words=re.split(r'[-_]+',m.group(1))
+    tags=[]
+    for value in parts+words:
+        value=value.strip().lower()
+        if not value or value=='featured' or value in tags:
+            continue
+        tags.append(value)
+    return tags[:12]
 
-photos = []
-for path in sorted(IMAGE_ROOT.rglob('*')):
-    if not path.is_file() or path.suffix.lower() not in EXTS:
-        continue
-    title, date = clean_title(path.stem)
-    category = category_for(path)
-    rel = path.relative_to(ROOT).as_posix()
-    photos.append({
-        'image': rel,
-        'title': title,
-        'category': category,
-        'date': date,
-        'location': '',
-        'note': '',
-        'alt': make_alt(title, category),
-    })
+photos=[]
+for p in sorted(IMG.rglob('*')):
+    if p.is_file() and p.suffix.lower() in EXT:
+        rel=p.relative_to(ROOT).as_posix()
+        parts=p.relative_to(IMG).parts
+        cat=parts[0].title() if len(parts)>1 else 'Other'
+        title,date=title_date(p.stem)
+        featured=bool(re.search(r'(^|[-_])featured([-_]|$)',p.stem,re.I))
+        photos.append({
+            'image':rel,
+            'title':title,
+            'category':cat,
+            'date':date,
+            'location':'',
+            'note':'',
+            'tags':tags_for(p),
+            'featured':featured,
+            'alt':f'{title} — {cat} photograph'
+        })
 
-# Newest-dated work first; undated files remain after dated ones, alphabetically.
-photos.sort(key=lambda p: (p['date'] == '', p['date'], p['title'].lower()), reverse=False)
-# For dated photos, reverse chronological; keep undated alphabetically.
-dated = [p for p in photos if p['date']]
-undated = [p for p in photos if not p['date']]
-dated.sort(key=lambda p: p['date'], reverse=True)
-undated.sort(key=lambda p: p['title'].lower())
-photos = dated + undated
-
-OUTPUT.write_text(json.dumps(photos, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-print(f'Generated {OUTPUT} with {len(photos)} photos.')
+photos.sort(key=lambda x:x['date'],reverse=True)
+OUT.write_text(json.dumps(photos,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+print(f'Generated {len(photos)} photos.')
