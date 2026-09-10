@@ -19,13 +19,7 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
 <script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"ImageGallery",
-  "name":"YU PHOTOGRAPHY",
-  "description":"Moments in ordinary life.",
-  "url":"https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/"
-}
+{"@context":"https://schema.org","@type":"ImageGallery","name":"YU PHOTOGRAPHY","description":"Moments in ordinary life.","url":"https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/"}
 </script>
 </head>
 <body>
@@ -37,8 +31,11 @@
     <a href="#about" data-ja="概要" data-en="About">概要</a>
     <a href="#contact" data-ja="お問い合わせ" data-en="Contact">お問い合わせ</a>
   </nav>
-  <button id="langBtn" class="small-btn" aria-label="Switch to English">EN</button>
-  <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false">☰</button>
+  <div class="language-switch" role="group" aria-label="Language">
+    <button id="langJa" class="lang-option active" type="button">JP</button>
+    <button id="langEn" class="lang-option" type="button">EN</button>
+  </div>
+  <button id="menuBtn" class="menu-btn" aria-label="メニュー" aria-expanded="false">☰</button>
 </header>
 
 <main id="top">
@@ -65,7 +62,7 @@
     <div><span class="eyebrow" data-ja="SELECTED WORKS" data-en="SELECTED WORKS">SELECTED WORKS</span><h2 data-ja="ギャラリー" data-en="Gallery">ギャラリー</h2></div>
     <div class="tools">
       <label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="写真を検索..." data-placeholder-ja="写真を検索..." data-placeholder-en="Search photos..." aria-label="写真を検索"></label>
-      <button id="sortBtn" class="tool-btn">新しい順 ↓</button>
+      <button id="sortBtn" class="tool-btn" type="button">新しい順 ↓</button>
     </div>
   </div>
   <div class="filter-row">
@@ -76,9 +73,9 @@
     </div>
   </div>
   <div id="tagFilters" class="tag-filters"></div>
-  <div class="gallery-status"><p id="count" class="count"></p><button id="clearFilters" class="clear-btn" data-ja="絞り込みをリセット" data-en="Reset filters">絞り込みをリセット</button></div>
+  <div class="gallery-status"><p id="count" class="count"></p><button id="clearFilters" class="clear-btn" type="button" data-ja="絞り込みをリセット" data-en="Reset filters">絞り込みをリセット</button></div>
   <div id="galleryGrid" class="gallery-grid"></div>
-  <div id="empty" class="empty" hidden>写真が見つかりません。</div>
+  <div id="empty" class="empty" hidden data-ja="写真が見つかりません。" data-en="No photos found.">写真が見つかりません。</div>
 </section>
 
 <section id="about" class="about">
@@ -103,9 +100,9 @@
 
 <footer data-ja="© YU PHOTOGRAPHY" data-en="© YU PHOTOGRAPHY">© YU PHOTOGRAPHY</footer>
 
-<div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Photo viewer">
-  <button id="closeModal" class="modal-close" aria-label="閉じる">×</button>
-  <button id="prevBtn" class="modal-nav prev" aria-label="前の写真">‹</button>
+<div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+  <button id="closeModal" class="modal-close" aria-label="閉じる" type="button">×</button>
+  <button id="prevBtn" class="modal-nav prev" aria-label="前の写真" type="button">‹</button>
   <div class="modal-content">
     <img id="modalImg" alt="">
     <div class="modal-info">
@@ -113,15 +110,16 @@
       <p id="modalMeta"></p>
       <p id="modalNote"></p>
       <div class="modal-actions">
-        <button id="favoriteBtn">☆ <span data-ja="お気に入り" data-en="Favorite">お気に入り</span></button>
-        <button id="likeBtn">♡ <span id="likeCount">0</span></button>
-        <button id="shareBtn" data-ja="共有" data-en="Share">共有</button>
+        <button id="favoriteBtn" type="button">☆ <span data-ja="お気に入り" data-en="Favorite">お気に入り</span></button>
+        <button id="likeBtn" type="button">♡ <span id="likeCount">0</span></button>
+        <button id="shareBtn" type="button" data-ja="共有" data-en="Share">共有</button>
       </div>
     </div>
   </div>
-  <button id="nextBtn" class="modal-nav next" aria-label="次の写真">›</button>
+  <button id="nextBtn" class="modal-nav next" aria-label="次の写真" type="button">›</button>
 </div>
 
+<button id="backToTop" class="back-to-top" type="button" aria-label="トップへ戻る">↑</button>
 <script src="script.js"></script>
 </body>
 </html>
